@@ -1,0 +1,597 @@
+/* GENERAL SETTING */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', system-ui;
+    color: #243e63;
+}
+
+
+nav {
+  background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvUYfvWmCJdQSsozVJ2JK8LUlrQ7I8ATpadQ&s'); /* Replace with your image path */
+ 
+ } 
+
+ header{
+     background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvUYfvWmCJdQSsozVJ2JK8LUlrQ7I8ATpadQ&s'); /* Replace with your image path */
+
+ }
+
+
+body {
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+section {
+    padding: 0 32px;
+}
+
+main {
+    margin-bottom: 96px;
+}
+
+.container {
+    padding: 96px 0;
+}
+
+.row {
+    width: 100%;
+    max-width: 12800px;
+    margin: 0 auto;
+}
+
+.row__narrow {
+    width: 100%;
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+.purple {
+    color: #6415ff;
+}
+
+a {
+    display: inline;
+    text-decoration: none;
+}
+
+img {
+    width: 100%;
+}
+
+h1 {
+    font-size: 48px;
+    color: #f1f4fa;
+    line-height: 1.25;
+}
+
+ h2 {
+    letter-spacing: 0.025em;
+    line-height: 1;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+button {
+    cursor: pointer;
+    border: none;
+}
+
+
+
+/* NAVBAR ↓ */
+
+/*FOR GENERAL NAV SETTING*/
+nav {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 32px;
+}
+
+.nav__row {
+    
+    display: flex;
+    justify-content: space-between;
+}
+/*FOR LOGO IN NAV*/
+
+.nav__logo {
+    display: flex;
+    align-items: center;
+    margin: 8px 0;
+    padding-bottom: 4px;
+}
+
+.nav__logo--img {
+    width: 80px;
+    height: 60px;
+}
+.nav__logo--title {
+    font-size: 40px;
+    font-weight: 900;
+    margin-left: 12px;
+    letter-spacing: 0.6px;
+    padding-bottom: 2px;
+    color: #f1f4fa;
+}
+
+/*FOR ALL LINKS IN THE NAV BAR*/
+/* 1. For Global */
+.nav__links{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding-bottom: 2px;
+}
+/* 1. For individual */
+.nav__link {
+    font-size: 20px;
+    font-weight: 800;
+    padding-top: 4px;
+    letter-spacing: 0.35px;
+    border-bottom: 2px solid transparent;
+    position: relative;
+    transition: all 300ms;
+    color: #f2e5e5;
+}
+
+/*  to modify a paticular link */
+.nav__link--primary {
+    color: #f7fafc;
+    padding: 12px 32px;
+    background: #19af3a;
+    border-radius: 500px;
+    border: none;
+}
+
+/*for click buttom to open modal ↓, .....*/
+.btn__menu {
+    display: none;
+    background: transparent;
+    border: none;
+    transition: all 300ms ease;
+}
+
+.btn__menu {
+  background-color: rgb(241, 236, 236);
+  font-size: 40px;
+  text-align: center;
+   color: #7342d6;
+   border-radius: 25%;
+}
+
+/* For modal */
+/* 1.for general modal */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 378px;
+    margin: 24px 16px;
+    padding: 32px;
+    background-color: #100f0f;
+    border: 1px solid rgb(181, 187, 199);
+    border-radius: 8px;
+    z-index: 4;
+    transform: translateX(300%);
+    /* for animation */
+    visibility: hidden;
+    opacity: 0;
+    transition: all 300ms ease;
+}
+
+/* 2. for buttom in modal */
+.btn__menu--close {
+    position: fixed;
+    top: 24px;
+    right: 18px;
+    background-color: #c0c6c1;
+}
+/* 3.for general link in modal */
+.modal__links {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 4.for individual link in modal */
+.modal__link {
+    color: #ebedf3;
+    font-size: 18px;
+    font-weight: bold;
+    font-weight: 600;
+    line-height: 1.5;
+    margin: 8px 0;
+    padding-bottom: 4px;
+    border-bottom: 2px solid transparent;
+}
+
+/* 5. to make all the link hover*/
+.modal__link:hover {
+  text-decoration: underline;
+}
+ /* 6. to make a particular link hover */
+.modal__link--primary:hover {
+  text-decoration: none;
+}
+
+/* 7. to modify a paticular link */
+.modal__link--primary {
+    color: #f7fafc;
+    padding: 12px 32px;
+    background: #391386;
+    border-radius: 500px;
+    border: none;
+}
+
+.menu--open .modal {
+    transform: translateX(0);
+     /* for animation */
+    visibility: visible;
+    opacity: 1;
+}
+
+/* .btn__menu--svg:hover {
+    filter: invert(26%) sepia(94%) saturate(7476%) hue-rotate(261deg) brightness(94%) contrast(115%);
+} */
+
+ /* .menu--open { this is to only see the menu open on the screen */
+  /* max-height: 100vh; */
+  /* overflow-y: hidden; */
+/* }  */
+
+
+/* 
+
+HEADER / ABOUT US ↓
+
+*/
+/* 1. For general setting in Header */
+header{
+ position: relative;
+}
+
+header .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+/* 2. For repartition block in header */
+/* FOR LEFT DESCRIPTION*/
+.header__description {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* 3. For the first block in header  */
+.header__description--para {
+    margin: 32px;
+}
+
+/* 4. For general setting in the first block see general setting */
+
+/* 5. for sub-bock search in the first block */
+.header__search {
+    width: 100%;
+    max-width: 448px;
+    height: 68px;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/* 6. For search-input in the sub-block email */
+.header__search--input {
+    width: 100%;
+    border-radius: 500px;
+    border: 2px solid rgb(229, 231, 235);
+    padding: 20px 192px 20px 32px;
+    color: rgb(36, 62, 99);
+    font-size: 12px;
+    font-weight: 500;
+    position: relative;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+    transition: border-color 300ms;
+}
+
+select {
+    border-radius: 20%;
+    border: 2px solid red;
+    color: #101110;
+    height: 40px;
+    line-height: 40px;
+    outline: none;
+    padding: 0 16px;
+    width: 100%;
+}
+
+/* 7. For search-button in the sub-block email */
+.header__search--btn {
+    z-index: 2;
+    margin: -100px;
+    height: 80%;
+    border-radius: 500px;
+    width: 100px;
+    border: none;
+    background-color: #6415ff;
+    color: #fff;
+    font-weight: 700;
+    font-size: 16px;
+    transition: all 300ms;
+}
+
+
+/* For section search*/
+
+.wrapper {
+    border: 2px solid red;
+  width:100%;
+  background: #e3a9a9;
+  border-radius: 10px;
+  padding: 20px 25px 40px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.1);
+}
+
+.section__title{
+    display: flex;
+    justify-content: space-between;
+}
+
+.price-input {
+  width: 100%;
+  display: flex;
+  margin: 30px 0 35px;
+}
+.price-input .field {
+  display: flex;
+  width: 100%;
+  height: 45px;
+  align-items: center;
+}
+
+.field input {
+  width: 100%;
+  height: 100%;
+  outline: none;
+  font-size: 19px;
+  margin-left: 12px;
+  border-radius: 5px;
+  text-align: center;
+  border: 1px solid #060606;
+  -moz-appearance: textfield;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.price-input .separator {
+  width: 130px;
+  display: flex;
+  font-size: 19px;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider {
+  height: 5px;
+  position: relative;
+  background: #a39c9c;
+  border-radius: 5px;
+}
+
+.slider .progress {
+  height: 100%;
+  left: 0%;
+  right: 0%;
+  position: absolute;
+  border-radius: 5px;
+  background: #270e7c;
+}
+.range-input {
+  position: relative;
+}
+
+.range-input input {
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  top: -5px;
+  background: none;
+  pointer-events: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  height: 17px;
+  width: 17px;
+  border-radius: 50%;
+  background: #17a2b8;
+  pointer-events: auto;
+  -webkit-appearance: none;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.05);
+}
+
+input[type="range"]::-moz-range-thumb {
+  height: 17px;
+  width: 17px;
+  border: none;
+  border-radius: 50%;
+  background: #17a2b8;
+  pointer-events: auto;
+  -moz-appearance: none;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.05);
+}
+
+
+/* For SPIRAL*/
+
+.loading-state{
+    margin: 80px 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+svg:not(:root).svg-inline--fa {
+    overflow: visible;
+}
+
+.svg-inline--fa.fa-w-16 {
+    width: 1em;
+}
+
+.svg-inline--fa {
+    display: inline-block;
+    font-size: inherit;
+    height: 1em;
+    overflow: visible;
+    vertical-align: -0.125em;
+}
+
+
+
+.fa-spinner{
+    animation: spinner 1000ms infinite;
+ }
+    @keyframes spinner {
+
+        0%{
+            transform: rotate(0deg);
+
+        }
+
+        100%{
+            transform: rotate(360deg);
+
+        }
+    }
+
+
+/* MOBILE RESPONSIVENESS ↓ */
+
+
+
+
+@media(max-width: 1280px) {
+    header .row {
+        align-items: flex-end;
+    }
+
+   
+
+    header .row {
+        align-items: flex-end;
+    }
+
+
+    .header__img--wrapper {
+        display: flex;
+        justify-content: flex-end;
+    }
+    
+    .header__img {
+        max-width: 512px;
+    }
+}
+
+@media (max-width: 1024px) {
+
+
+    header .row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header__description {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .header__description, .header__img--wrapper {
+        width: 100%;
+        max-width: 512px;
+        margin: 0 auto;
+    }
+
+
+
+    .btn__menu {
+        display: block;
+    }
+
+
+    header .row {
+        flex-direction: column;
+        align-items: center;
+    }
+     .nav__links { /* only display it with max-width = 1024px */
+    display: none;
+  }
+}
+
+@media(max-width: 640px) {
+    .container {
+        padding: 80px 0;
+    }
+
+    .header__search {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .header__search--input {
+        position: static;
+        padding: 16px 0;
+        padding-left: 32px;
+        line-height: 1.5;
+    }
+
+    .header__search--btn {
+        width: 100%;
+        padding: 16px 0;
+        margin: 16px 0;
+        margin-bottom: 0px;
+        line-height: 1.5;
+    }
+
+    .btn {
+        line-height: 1.5;
+    }
+
+    .nav__logo {
+        margin: 8px 0;
+        padding-bottom: 4px;
+    }
+    main {
+        margin-bottom: 80px;
+    }
+
+  .btn__menu {
+    display: block; 
+  }
+  .nav__link {
+    font-size: 20px;
+}
+}
